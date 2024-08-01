@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: 'Inter', sans-serif;
+    /* Use Inter for a clean, modern font */
+    background-color: #f5f5f5;
+    /* Light background */
+    color: #333;
+    /* Dark text for readability */
+}
+
+.dark body {
+    background-color: #1a202c;
+    /* Dark background */
+    color: #edf2f7;
+    /* Light text for readability */
+}
+
+.accent1 {
+    color: #007bff;
+    /* Blue accent color for a pop of vibrance */
+}
+
+.max-w-content {
+    max-width: 800px;
+}
+
+h2,
+h3 {
+    font-family: inherit;
+    /* Inherit font from body for consistency */
+    color: #333;
+    /* Darker text for headings (light mode) */
+    color: #edf2f7;
+    /* Lighter text for headings (dark mode) */
+}
+
+:hover {
+    /* Use accent color for hover state */
+    transition: color 0.2s;
+}
+
+.carousel-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+}
+
+.carousel-item {
+    display: inline-block;
+    margin-right: 16px;
+    /* Adjust as needed */
+}
+
+.projects a {
+    background-color: #fff;
+    /* White background for project cards */
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: #f5f5f5;
+    /* Light background for footer (light mode) */
+    color: #333;
+    /* Dark text for footer (light mode) */
+    padding: 1rem;
+    text-align: center;
+}
+
+.dark footer {
+    background-color: #1a202c;
+    /* Dark background for footer (dark mode) */
+    color: #edf2f7;
+    /* Light text for footer (dark mode) */
+}
+
+.carousel-wrapper {
+    overflow: hidden;
+    position: relative;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+}
+
+.carousel-content {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+    animation: scroll 30s linear infinite;
+}
+
+.carousel-content:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
