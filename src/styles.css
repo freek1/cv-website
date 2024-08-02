@@ -9,6 +9,7 @@ body {
     /* Light background */
     color: #333;
     /* Dark text for readability */
+    overflow-x: hidden;
 }
 
 .dark body {

@@ -21,21 +21,40 @@
                 <p class="text-sm text-gray-600 dark:text-slate-400 font-jetbrains">MLE: Machine Learning Enthusiast</p>
             </div>
             <ul class="flex space-x-4">
-                <li><a href="#about" class="hover:text-purple-600 dark:hover:text-purple-400">About Me</a></li>
-                <li><a href="#projects" class="hover:text-purple-600 dark:hover:text-purple-400">Projects</a></li>
-                <li><a href="#experience" class="hover:text-purple-600 dark:hover:text-purple-400">Experience</a></li>
-                <li><a href="#education" class="hover:text-purple-600 dark:hover:text-purple-400">Education</a></li>
-                <li><a href="#skills" class="hover:text-purple-600 dark:hover:text-purple-400">Skills</a></li>
-                <li>
-                    <button @click="darkMode = !darkMode" class="p-2 bg-gray-200 rounded dark:bg-slate-600">
-                        <i x-show="darkMode" class="fas fa-sun"></i>
-                        <i x-show="!darkMode" class="fas fa-moon"></i>
-                    </button>
+                <li class="relative group flex items-center">
+                    <a href="#about" class="relative w-max">About Me</a>
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-0.5 bg-indigo-600 group-hover:w-full"></span>
+                </li>
+                <li class="relative group flex items-center">
+                    <a href="#projects" class="relative w-max">Projects</a>
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-0.5 bg-indigo-600 group-hover:w-full"></span>
+                </li>
+                <li class="relative group flex items-center">
+                    <a href="#experience" class="relative w-max ">Experience</a>
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-0.5 bg-indigo-600 group-hover:w-full"></span>
+                </li>
+                <li class="relative group flex items-center">
+                    <a href="#education" class="relative w-max ">Education</a>
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-0.5 bg-indigo-600 group-hover:w-full"></span>
+                </li>
+                <li class="relative group flex items-center">
+                    <a href="#skills" class="relative w-max">Skills</a>
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-0.5 bg-indigo-600 group-hover:w-full"></span>
+                </li>
+                <button @click="darkMode = !darkMode" class="p-2 bg-gray-200 rounded dark:bg-slate-600">
+                    <i x-show="darkMode" class="fas fa-sun"></i>
+                    <i x-show="!darkMode" class="fas fa-moon"></i>
+                </button>
                 </li>
             </ul>
         </nav>
     </header>
-    <main class="container mx-auto max-w-4xl p-4">
+    <main class="container mx-auto max-w-xl p-4">
         <section class="contact-me py-8">
             <div class="container mx-auto text-center">
                 <div class="flex justify-center space-x-8">
@@ -66,58 +85,57 @@
             </div>
         </section>
 
-        <section id="projects" class="project mt-8">
+        <section id="projects" class="project mt-8 pb-18">
             <div x-data="{}" x-init="$nextTick(() => {
             let ul = $refs.projects;
             ul.insertAdjacentHTML('afterend', ul.outerHTML);
             ul.nextSibling.setAttribute('aria-hidden', 'true');
         })" class="carousel-wrapper w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
                 <ul x-ref="projects"
-                    class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
-                    <li>
+                    class="flex items-center pb-18 justify-center md:justify-start [&_li]:mx-8 [&_li]:mb-18 [&_img]:max-w-none animate-infinite-scroll">
+                    <li style="margin-bottom: 18px;">
                         <a href="#"
-                            class="flex-shrink-0 bg-white hover:bg-slate-50 dark:bg-slate-800 dark:hover:bg-slate-700 p-6 rounded-lg shadow-lg w-96 flex flex-col transition duration-300">
-                            <img src="https://via.placeholder.com/400x250" alt="Project Image 3"
+                            class="flex-shrink-0 bg-white hover:bg-slate-50 dark:bg-slate-800 dark:hover:bg-slate-700 p-6 rounded-lg shadow-lg w-[32rem] flex flex-col transition duration-300">
+                            <img src="https://via.placeholder.com/400x250" alt="Project Image 1"
                                 class="w-full h-48 object-cover rounded-md">
-                            <h3 class="text-xl font-semibold text-purple-600 dark:text-purple-400 mt-4 font-inter">
+                            <h3 class="text-3xl font-semibold text-purple-600 dark:text-purple-400 mt-4 font-inter">
                                 Project Title 1</h3>
-                            <p class="mt-2 text-gray-700 dark:text-slate-300 flex-grow font-jetbrains">
-                                Brief description
-                                of
-                                the
-                                project. This project focuses on...</p>
-                            <span class="mt-4 font-semibold hover:underline transition duration-150">Read more</span>
+                            <p
+                                class="mt-4 text-gray-700 dark:text-slate-300 flex-grow font-jetbrains transition duration-300">
+                                Brief description of the project. This project focuses on...</p>
+                            <span class="relative group mt-4 font-semibold transition duration-150 hover:underline">
+                                Read more
+                            </span>
                         </a>
                     </li>
-                    <li>
+                    <li style="margin-bottom: 18px;">
                         <a href="#"
-                            class="flex-shrink-0 bg-white hover:bg-slate-50 dark:bg-slate-800 dark:hover:bg-slate-700 p-6 rounded-lg shadow-lg w-96 flex flex-col transition duration-300">
-                            <img src="https://via.placeholder.com/400x250" alt="Project Image 3"
+                            class="flex-shrink-0 bg-white hover:bg-slate-50 dark:bg-slate-800 dark:hover:bg-slate-700 p-6 rounded-lg shadow-lg w-[32rem] flex flex-col transition duration-300">
+                            <img src="https://via.placeholder.com/400x250" alt="Project Image 2"
                                 class="w-full h-48 object-cover rounded-md">
-                            <h3 class="text-xl font-semibold text-purple-600 dark:text-purple-400 mt-4 font-inter">
+                            <h3 class="text-3xl font-semibold text-purple-600 dark:text-purple-400 mt-4 font-inter">
                                 Project Title 2</h3>
-                            <p class="mt-2 text-gray-700 dark:text-slate-300 flex-grow font-jetbrains">
-                                Brief description
-                                of
-                                the
-                                project. This project focuses on...</p>
-                            <span class="mt-4 font-semibold hover:underlin transition duration-150">Read more</span>
+                            <p
+                                class="mt-4 text-gray-700 dark:text-slate-300 flex-grow font-jetbrains transition duration-300">
+                                Brief description of the project. This project focuses on...</p>
+                            <span class="relative group mt-4 font-semibold transition duration-150 hover:underline">
+                                Read more
+                            </span>
                         </a>
                     </li>
-                    <li>
+                    <li style="margin-bottom: 18px;">
                         <a href="#"
-                            class="flex-shrink-0 bg-white hover:bg-slate-50 dark:bg-slate-800 dark:hover:bg-slate-700 p-6 rounded-lg shadow-lg w-96 flex flex-col transition duration-300">
+                            class="flex-shrink-0 bg-white hover:bg-slate-50 dark:bg-slate-800 dark:hover:bg-slate-700 p-6 rounded-lg shadow-lg w-[32rem] flex flex-col transition duration-300">
                             <img src="https://via.placeholder.com/400x250" alt="Project Image 3"
                                 class="w-full h-48 object-cover rounded-md">
-                            <h3 class="text-xl font-semibold text-purple-600 dark:text-purple-400 mt-4 font-inter">
+                            <h3 class="text-3xl font-semibold text-purple-600 dark:text-purple-400 mt-4 font-inter">
                                 Project Title 3</h3>
                             <p
-                                class="mt-2 text-gray-700 dark:text-slate-300 flex-grow font-jetbrains transition duration-300">
-                                Brief description
-                                of
-                                the
-                                project. This project focuses on...</p>
-                            <span class="mt-4 font-semibold hover:underline transition duration-150">Read more</span>
+                                class="mt-4 text-gray-700 dark:text-slate-300 flex-grow font-jetbrains transition duration-300">
+                                Brief description of the project. This project focuses on...</p>
+                            <span class="relative group mt-4 font-semibold transition duration-150 hover:underline">
+                                Read more
+                            </span>
                         </a>
                     </li>
                 </ul>
